@@ -26,6 +26,7 @@
             <p>Número de visitante: <span id="visitorNumber"></span></p>
             <p>Dirección IP del visitante: <span id="visitorIP"></span></p>
             <p>Hora de la visita: <span id="visitTime"></span></p>
+            <p>Ubicación de la IP: <span id="ipLocation"></span></p>
         </section>
     </main>
 
@@ -34,7 +35,7 @@
     </footer>
 
     <script>
-        // JavaScript para obtener y mostrar el número de visitante, dirección IP y hora de la visita
+        // JavaScript para obtener y mostrar el número de visitante, dirección IP, hora de la visita y geolocalización
         var visitorNumber = localStorage.getItem('visitorNumber');
         var visitorIP = "";
 
@@ -45,13 +46,23 @@
             visitorNumber = parseInt(visitorNumber) + 1;
         }
 
-        // Obtiene la dirección IP del visitante utilizando un servicio externo (ejemplo)
-        fetch('https://api64.ipify.org?format=json')
+        // Obtiene la dirección IP del visitante utilizando un servicio externo (ipify.org)
+        fetch('https://api.ipify.org?format=json')
             .then(response => response.json())
             .then(data => {
                 visitorIP = data.ip;
                 // Muestra la dirección IP en el HTML
                 document.getElementById('visitorIP').textContent = visitorIP;
+
+                // Obtiene la geolocalización de la dirección IP
+                fetch('http://ip-api.com/json/' + visitorIP)
+                    .then(response => response.json())
+                    .then(data => {
+                        // Muestra la ubicación en el HTML
+                        var location = data.country + ', ' + data.regionName + ', ' + data.city;
+                        document.getElementById('ipLocation').textContent = location;
+                    })
+                    .catch(error => console.error(error));
             })
             .catch(error => console.error(error));
 
