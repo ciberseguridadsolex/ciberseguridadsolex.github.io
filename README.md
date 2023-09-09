@@ -17,7 +17,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2023 Mi Sitio Web</p>
+        <p>&copy; Ciberseguridad Solex 2023® </p>
     </footer>
 </body>
 </html>
