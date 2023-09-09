@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -25,8 +25,6 @@
         <section>
             <p>Número de visitante: <span id="visitorNumber"></span></p>
             <p>Dirección IPv4 del visitante: <span id="visitorIPv4"></span></p>
-            <p>País del visitante: <span id="visitorCountry"></span></p>
-            <p>Bandera del país: <img id="countryFlag" src="" alt="Bandera del país"></p>
             <p>Hora de la visita: <span id="visitTime"></span></p>
         </section>
     </main>
@@ -36,11 +34,9 @@
     </footer>
 
     <script>
-        // JavaScript para obtener y mostrar el número de visitante, dirección IPv4, país y bandera
+        // JavaScript para obtener y mostrar el número de visitante, dirección IPv4 y hora de la visita
         var visitorNumber = localStorage.getItem('visitorNumber');
         var visitorIPv4 = "";
-        var visitorCountry = "";
-        var countryFlagImg = document.getElementById('countryFlag');
 
         // Incrementa el número de visitante
         if (!visitorNumber) {
@@ -56,19 +52,6 @@
                 visitorIPv4 = data.ip;
                 // Muestra la dirección IPv4 en el HTML
                 document.getElementById('visitorIPv4').textContent = visitorIPv4;
-
-                // Obtiene la información de geolocalización del visitante
-                fetch('https://ipinfo.io/' + visitorIPv4 + '/json')
-                    .then(response => response.json())
-                    .then(data => {
-                        visitorCountry = data.country;
-                        // Muestra el país en el HTML
-                        document.getElementById('visitorCountry').textContent = visitorCountry;
-
-                        // Carga la bandera del país (debe reemplazar "XX" con el código de país correcto)
-                        countryFlagImg.src = 'https://www.countryflags.io/' + visitorCountry + '/flat/64.png';
-                    })
-                    .catch(error => console.error(error));
             })
             .catch(error => console.error(error));
 
@@ -85,4 +68,3 @@
     </script>
 </body>
 </html>
-``
