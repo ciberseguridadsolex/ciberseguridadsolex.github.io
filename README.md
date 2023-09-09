@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -23,8 +23,9 @@
             </a> para tomar medidas inmediatas.</p>
         </section>
         <section>
-            <p id="visitorNumber">Número de visitante:</p>
-            <p id="userEmail">Cuenta de correo:</p>
+            <p>Número de visitante: <span id="visitorNumber"></span></p>
+            <p>Dirección IP del visitante: <span id="visitorIP"></span></p>
+            <p>Hora de la visita: <span id="visitTime"></span></p>
         </section>
     </main>
 
@@ -33,9 +34,9 @@
     </footer>
 
     <script>
-        // JavaScript para obtener y mostrar el número de visitante y la cuenta de correo
+        // JavaScript para obtener y mostrar el número de visitante, dirección IP y hora de la visita
         var visitorNumber = localStorage.getItem('visitorNumber');
-        var userEmail = localStorage.getItem('userEmail');
+        var visitorIP = "";
 
         // Incrementa el número de visitante
         if (!visitorNumber) {
@@ -44,16 +45,26 @@
             visitorNumber = parseInt(visitorNumber) + 1;
         }
 
-        // Obtiene la cuenta de correo (puedes ajustar cómo la obtienes)
-        var currentUserEmail = "correo@example.com"; // Reemplaza esto con la lógica real para obtener el correo del usuario
+        // Obtiene la dirección IP del visitante utilizando un servicio externo (ejemplo)
+        fetch('https://api64.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                visitorIP = data.ip;
+                // Muestra la dirección IP en el HTML
+                document.getElementById('visitorIP').textContent = visitorIP;
+            })
+            .catch(error => console.error(error));
 
-        // Almacena el número de visitante y la cuenta de correo en el almacenamiento local
+        // Obtiene la hora actual
+        var visitTime = new Date();
+        var visitTimeString = visitTime.toLocaleString();
+
+        // Almacena el número de visitante y la hora de la visita en el almacenamiento local
         localStorage.setItem('visitorNumber', visitorNumber);
-        localStorage.setItem('userEmail', currentUserEmail);
 
-        // Muestra el número de visitante y la cuenta de correo en el HTML
-        document.getElementById('visitorNumber').textContent += ' ' + visitorNumber;
-        document.getElementById('userEmail').textContent += ' ' + currentUserEmail;
+        // Muestra el número de visitante y la hora de la visita en el HTML
+        document.getElementById('visitorNumber').textContent = visitorNumber;
+        document.getElementById('visitTime').textContent = visitTimeString;
     </script>
 </body>
 </html>
