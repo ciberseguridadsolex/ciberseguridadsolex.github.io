@@ -45,8 +45,8 @@
             visitorNumber = parseInt(visitorNumber) + 1;
         }
 
-        // Obtiene la dirección IP del visitante utilizando un servicio externo (ejemplo)
-        fetch('https://api64.ipify.org?format=json')
+        // Obtiene la dirección IP del visitante utilizando un servicio externo (ejemplo) con HTTPS
+        fetch('https://api.ipify.org?format=json')
             .then(response => response.json())
             .then(data => {
                 visitorIP = data.ip;
