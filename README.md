@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -6,8 +6,8 @@
     <title>Has mordido el anzuelo</title>
     <style>
         body {
-            background-color: black; /* Establece el fondo en negro */
-            color: white; /* Cambia el color del texto a blanco */
+            background-color: black;
+            color: white;
         }
     </style>
 </head>
@@ -22,10 +22,38 @@
               <img src="https://drive.google.com/uc?id=1wchi4XR7w5Tuh2Qx-54_RuSbFhfltr4R" alt="Imagen de phishing" />
             </a> para tomar medidas inmediatas.</p>
         </section>
+        <section>
+            <p id="visitorNumber">Número de visitante:</p>
+            <p id="userEmail">Cuenta de correo:</p>
+        </section>
     </main>
 
     <footer>
         <p>&copy; Ciberseguridad Solex 2023</p>
     </footer>
+
+    <script>
+        // JavaScript para obtener y mostrar el número de visitante y la cuenta de correo
+        var visitorNumber = localStorage.getItem('visitorNumber');
+        var userEmail = localStorage.getItem('userEmail');
+
+        // Incrementa el número de visitante
+        if (!visitorNumber) {
+            visitorNumber = 1;
+        } else {
+            visitorNumber = parseInt(visitorNumber) + 1;
+        }
+
+        // Obtiene la cuenta de correo (puedes ajustar cómo la obtienes)
+        var currentUserEmail = "correo@example.com"; // Reemplaza esto con la lógica real para obtener el correo del usuario
+
+        // Almacena el número de visitante y la cuenta de correo en el almacenamiento local
+        localStorage.setItem('visitorNumber', visitorNumber);
+        localStorage.setItem('userEmail', currentUserEmail);
+
+        // Muestra el número de visitante y la cuenta de correo en el HTML
+        document.getElementById('visitorNumber').textContent += ' ' + visitorNumber;
+        document.getElementById('userEmail').textContent += ' ' + currentUserEmail;
+    </script>
 </body>
 </html>
