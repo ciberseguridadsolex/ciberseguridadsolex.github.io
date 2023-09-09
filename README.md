@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -24,7 +24,7 @@
         </section>
         <section>
             <p>Número de visitante: <span id="visitorNumber"></span></p>
-            <p>Dirección IPv4 del visitante: <span id="visitorIPv4"></span></p>
+            <p>Dirección IPv4 pública del visitante: <span id="visitorIPv4"></span></p>
             <p>Hora de la visita: <span id="visitTime"></span></p>
         </section>
     </main>
@@ -34,7 +34,7 @@
     </footer>
 
     <script>
-        // JavaScript para obtener y mostrar el número de visitante, dirección IPv4 y hora de la visita
+        // JavaScript para obtener y mostrar el número de visitante, dirección IPv4 pública y hora de la visita
         var visitorNumber = localStorage.getItem('visitorNumber');
         var visitorIPv4 = "";
 
@@ -45,8 +45,8 @@
             visitorNumber = parseInt(visitorNumber) + 1;
         }
 
-        // Obtiene la dirección IPv4 del visitante utilizando un servicio externo (ejemplo)
-        fetch('https://ipv4.ipify.org?format=json')
+        // Obtiene la dirección IPv4 pública del visitante utilizando ipify.org
+        fetch('https://api.ipify.org?format=json')
             .then(response => response.json())
             .then(data => {
                 visitorIPv4 = data.ip;
