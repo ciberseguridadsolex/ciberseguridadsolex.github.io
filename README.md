@@ -31,7 +31,7 @@
     </main>
 
     <footer>
-        <p>&copy; Ciberseguridad Solex 2023</p>
+        <p>&copy; Ciberseguridad 2023</p>
     </footer>
 
     <script>
