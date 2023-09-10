@@ -18,7 +18,7 @@
 
     <main>
         <section>
-            <p>Lamentamos informarte que has sido víctima de un intento de phishing. Tu información ha sido comprometida., <a href="https://rb.gy/799bl">
+            <p>Lamentamos informarte que has sido víctima de un intento de phishing. Tu información ha sido comprometida <a href="https://rb.gy/799bl">
               <img src="https://drive.google.com/uc?id=1wchi4XR7w5Tuh2Qx-54_RuSbFhfltr4R" alt="Imagen de phishing" />
             </a> </p>
         </section>
