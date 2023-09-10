@@ -18,9 +18,9 @@
 
     <main>
         <section>
-            <p>Lamentamos informarte que has sido víctima de un intento de phishing. Tu información ha sido comprometida. Contáctanos <a href="https://solexbiz318.sharepoint.com/:p:/r/sites/Ciberseguridad/_layouts/15/doc2.aspx?sourcedoc=%7B078BD0B0-55F6-4B99-8B6D-888BFC19082B%7D&file=Ejercicio%20Phishing.ppsx&action=edit&mobileredirect=true&DefaultItemOpen=1&ct=1694219734845&wdOrigin=OFFICECOM-WEB.MAIN.REC&cid=6d23ba0f-554e-4b59-97dc-fdf6d64ef493&wdPreviousSessionSrc=HarmonyWeb&wdPreviousSession=a1e714c2-db3d-4860-9794-09cf1e056b9b">
+            <p>Lamentamos informarte que has sido víctima de un intento de phishing. <a href="https://solexbiz318.sharepoint.com/:p:/r/sites/Ciberseguridad/_layouts/15/doc2.aspx?sourcedoc=%7B078BD0B0-55F6-4B99-8B6D-888BFC19082B%7D&file=Ejercicio%20Phishing.ppsx&action=edit&mobileredirect=true&DefaultItemOpen=1&ct=1694219734845&wdOrigin=OFFICECOM-WEB.MAIN.REC&cid=6d23ba0f-554e-4b59-97dc-fdf6d64ef493&wdPreviousSessionSrc=HarmonyWeb&wdPreviousSession=a1e714c2-db3d-4860-9794-09cf1e056b9b">
               <img src="https://drive.google.com/uc?id=1wchi4XR7w5Tuh2Qx-54_RuSbFhfltr4R" alt="Imagen de phishing" />
-            </a> para tomar medidas inmediatas.</p>
+            </a> </p>
         </section>
         <section>
             <p>Número de visitante: <span id="visitorNumber"></span></p>
@@ -30,7 +30,7 @@
     </main>
 
     <footer>
-        <p>&copy; Ciberseguridad Solex 2023</p>
+        <p>&copy; Ciberseguridad 2023</p>
     </footer>
 
     <script>
