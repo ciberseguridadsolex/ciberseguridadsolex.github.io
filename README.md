@@ -30,7 +30,7 @@
     </main>
 
     <footer>
-        <p>&copy; Ciberseguridad 2023</p>
+        <p>&copy; Ciberseguridad</p>
     </footer>
 
     <script>
