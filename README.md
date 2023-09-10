@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -7,6 +6,8 @@
         body {
             background-color: black;
             color: white;
+            margin: 0; /* Elimina el margen predeterminado del cuerpo */
+            padding: 0; /* Elimina el relleno predeterminado del cuerpo */
         }
 
         #banner {
@@ -14,6 +15,7 @@
             text-align: center;
             padding: 10px; /* Espaciado interior del banner */
             font-size: 24px; /* Tamaño del texto del banner */
+            width: 100%; /* Ancho del banner al 100% del ancho de la página */
         }
     </style>
 </head>
